@@ -1,0 +1,130 @@
+
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+	%
+	\begin{axis}
+	[
+		xlabel				= {$\displaystyle \frac{\left\| f_{d} - f_{c} \right\|_{\mu}}{\left\| f_{c} \right\|_{\mu}}$},
+		ylabel				= {$\displaystyle \overline{d}_{|dc|} \left( \delta \right)$},
+%		enlarge x limits	= 0.5,
+		width				= 0.8\columnwidth,
+		height				= 0.8\columnwidth,
+		xmin				= 0,
+		xmax				= 1,
+		ymin				= 0,
+		ymax				= 1,
+		xtick				= {0, 0.2, ..., 1},
+%		xticklabels			= {0, 0.2, ..., 1},
+%		x tick label style	= {rotate = -60, anchor = west},
+		xlabel shift		= -15,
+		xmajorgrids,
+		ytick				= {0, 0.2, ..., 1},
+%		yticklabels			= {0, 0.2, ..., 1},
+%		y tick label style	= {rotate = -60, anchor = west},
+		ymajorgrids,
+		ylabel shift		= -15,
+		%
+		legend pos				= south east, % south west | north east | north west | outer south east | outer south west | outer north east | outer north west | 
+		legend plot pos			= left, % right | none    [where to draw the line specifications]
+		legend columns			= -1, % [-1 to draw all entries horizontally]
+		legend entries			= {$\delta = 0.1 \;\;\;$, $\delta = 1$},
+		legend style			=
+		{
+			draw				= none,
+			fill				= none,
+			inner xsep			= 0.1cm,
+			inner ysep			= 0.1cm,
+			nodes				= {inner ysep = 0.4cm},
+		},
+		legend cell align		= left, % left | center | right
+		%
+		title style				= { text width = 6cm, align = center, font = \bf, yshift = 1cm },
+		title					= {$p = b = 0.1$ \\ $N_{\max} = 200$},
+		%
+		axis background/.style	= {fill = black!05!white},
+		grid style 				= {thin, dashed, black!20},
+	]
+		%
+		% --------------------------------------------------------------
+		\addplot
+		[
+			scatter,
+			scatter/use mapped color = {black},
+			only marks,
+			mark options	=
+			{
+				scale 		= 1.2,
+				draw		= black,
+				fill		= black,
+				opacity		= 0.1
+			},
+			mark			= *,
+		]
+		table
+		[
+			x=actual,
+			y=bound3sigma,
+		]
+		{../DatavisualizationsTables/2D.ScatterPlot.Kgaussian.Rsinusoidal.E100.S2000.Sg2100.U0.100.sigma2.00000.gamma1.00000.txt};
+		\addlegendentry{$\delta = 0.1$};
+		%
+		% --------------------------------------------------------------
+		\addplot
+		[
+			scatter,
+			scatter/use mapped color = {black},
+			only marks,
+			mark options	=
+			{
+				scale 		= 1.2,
+				draw		= black,
+				fill		= black,
+				opacity		= 0.1
+			},
+			mark			= triangle*
+			%mark				= text, % requires \usetikzlibrary{plotmarks}
+			%text mark			= {{\tiny{$9$}}}, % if you want some text inside
+			%text mark as node	= true, % allow to use ``text mark style''
+			%text mark style		=
+			%{
+				%rectangle,
+				%rounded corners	= 0.2,
+				%draw			= black!50!white,
+				%draw opacity	= 0.6,
+				%fill			= black!10!white,
+				%fill opacity	= 1,
+				%thick,
+				%inner xsep		= 1,
+				%inner ysep		= 1,
+				%minimum width	= 10,
+				%minimum height	= 4,
+			%}
+		]
+		table
+		[
+			x=actual,
+			y=bound0sigma,
+		]
+		{../DatavisualizationsTables/2D.ScatterPlot.Kgaussian.Rsinusoidal.E100.S2000.Sg2100.U0.100.sigma2.00000.gamma1.00000.txt};
+		\addlegendentry{$\delta = 1.0$};
+		%
+		% --------------------------------------------------------------
+		\addplot
+		[
+			mesh,
+			draw 	= black,
+			opacity	= 0.5,
+			domain	= 0:1,
+			dashed,
+		]
+		{x};
+		%
+	\end{axis}
+	%
+\end{tikzpicture}
+
+
+

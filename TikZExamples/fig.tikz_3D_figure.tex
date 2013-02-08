@@ -1,0 +1,17 @@
+
+\usetikzlibrary{3d}
+\begin{tikzpicture}[z = {(0.7cm,0.7cm)}]
+	%
+	\begin{scope}[canvas is xz plane at y=0]
+	\draw (0,0) rectangle (1,1);
+	\node (a) [coordinate] at (1,1) {};
+	\end{scope}
+	%
+	\begin{scope}[canvas is xz plane at y=3]
+	\draw (0,0) rectangle (1,1);
+	\node (b) [coordinate] at (1,1) {};
+	\end{scope}
+	%
+	\draw [->] (a) -- (b);
+	%
+\end{tikzpicture}

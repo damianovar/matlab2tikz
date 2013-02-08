@@ -1,0 +1,100 @@
+
+
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+	%
+	\begin{axis}
+	[
+		ybar,
+		%
+		width					= 0.8\columnwidth,
+		height					= 0.4\columnwidth,
+		%
+		axis x line				= bottom,	% bottom | middle | top
+		axis y line				= left,		% left | middle | right
+		axis on top,
+		%
+		%xmin					= 0,
+		%xmax					= 1,
+		%ymin					= 0,
+		%ymax					= 1,
+		%
+		xlabel					= {$x$},
+		xlabel near ticks,
+		xlabel shift			= -1,
+		%
+		%xtick					= {0, 0.2, ..., 1},
+		%xticklabels				= {0, 0.2, ..., 1},
+		%
+		ylabel					= {number of istances},
+		ylabel near ticks,
+		ylabel shift			= -1,
+		%
+		%ytick					= {0, 0.2, ..., 1},
+		%yticklabels				= {0, 0.2, ..., 1},
+		%
+		axis background/.style	= {fill = black!05!white},
+		grid style 				= {thin, dashed, black!20},
+		%
+		enlargelimits			= 0.05,
+		bar width				= 0.3cm,
+		%
+		nodes near coords,
+		point meta				= y * 10^2,	% scale the displayed number
+		%
+		legend style			=
+		{
+			at					= {(0.5,-0.25)},
+			anchor				= north,
+			legend columns		= -1,
+			draw				= none,
+			fill				= none,
+			inner xsep			= 0.1cm,
+			inner ysep			= 0.1cm,
+			nodes				= {inner ysep = 0.1cm, inner xsep = 0.5cm},
+		}
+	]
+		%
+		% --------------------------------------------------------------
+		\addplot
+		[
+			solid,
+			draw			= blue,
+			fill			= blue!20!white,
+			mark			= none,
+			line width		= 0.03cm,
+		]
+		table
+		[
+			x				= value,
+			y				= numberOfInstances,
+		]
+		{../DatavisualizationsTables/bernoulli_ending_times.txt};
+		\addlegendentry{Bernoulli};
+		%
+		% --------------------------------------------------------------
+		\addplot
+		[
+			solid,
+			draw			= red,
+			fill			= red!20!white,
+			mark			= none,
+			line width		= 0.03cm,
+		]
+		table
+		[
+			x				= value,
+			y				= numberOfInstances,
+		]
+		{../DatavisualizationsTables/max_ending_times.txt};
+		\addlegendentry{Max};
+		%
+	\end{axis}
+	%
+\end{tikzpicture}
+
+
+

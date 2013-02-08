@@ -1,0 +1,46 @@
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+	%
+	\begin{axis}
+	[
+		width 	= 0.8\columnwidth,
+		height	= 0.8\columnwidth,
+		hide x axis,
+		hide y axis,
+	]
+		%
+		\addplot
+		[
+			only marks,
+			mark options	=
+			{
+				scale 		= 1.2,
+				draw		= black,
+				fill		= black!50!white,
+				opacity		= 1
+			},
+		]
+		table
+		{../DatavisualizationsTables/Network.txt.NodesPositions};
+		%
+		\addplot
+		[
+			quiver		=
+			{
+				u		= \thisrow{towardsx},
+				v		= \thisrow{towardsy}
+			},
+			solid,
+			color		= black!50!white,
+			line width	= 0.01cm,
+%			arrows		= stealth-stealth,
+		]
+		table
+		{../DatavisualizationsTables/Network.txt.LinksList};
+		%
+	\end{axis}
+	%
+\end{tikzpicture}

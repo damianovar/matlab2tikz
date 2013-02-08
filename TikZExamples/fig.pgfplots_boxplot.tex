@@ -1,0 +1,64 @@
+
+
+\begin{center}
+\begin{tikzpicture}
+	%
+	\begin{axis}
+	[
+		xlabel				= {bananas},
+		ylabel				= {pears},
+%		enlarge x limits	= 0.5,
+		width				= 0.8\columnwidth,
+		height				= 1\columnwidth,
+		ymin				= -2,
+		ymax				= 4,
+		xtick				= {1, 2, 3, 4},
+		xticklabels			= {today, tomorrow, 3, 4},
+		x tick label style	= {rotate = -60, anchor = west},
+		ytick				= {0, 2},
+		yticklabels			= {zero, two},
+		ymajorgrids,
+	]
+		%
+		\addplot [box plot median]			table {testdata.dat};
+		\addplot [box plot box]				table {testdata.dat};
+		\addplot [box plot top whisker]		table {testdata.dat};
+		\addplot [box plot bottom whisker]	table {testdata.dat};
+		%
+		\addplot [box plot outliers]		table {testdata.dat.outliers1};
+		\addplot [box plot outliers]		table {testdata.dat.outliers2};
+		\addplot [box plot outliers]		table {testdata.dat.outliers3};
+		\addplot [box plot outliers]		table {testdata.dat.outliers4};
+		%
+		\node (n) [coordinate] at (axis cs: 0,0) {};
+		%
+	\end{axis}
+	%
+\end{tikzpicture}
+\end{center}
+
+
+
+
+%%% testdata.dat:
+%%%
+%%% box_id   median   box_top   box_bottom   whisker_top   whisker_bottom
+%0 1 1.2 0.4 1.5 0.2
+%1 2 2.3 1.5 2.7 1
+%2 0.7 1.4 0.5 1.9 0.1
+%3 1 1.2 0.4 1.5 0.2
+%4 2 2.3 1.5 2.7 1
+%5 0.7 1.4 0.5 1.9 0.1
+%6 1 1.2 0.4 1.5 0.2
+
+
+
+%%% testdata.dat.outliers1
+%1 2.8
+%1 2.85
+%1 3
+%1 -1
+%1 -1.3
+%1 0.5
+
+

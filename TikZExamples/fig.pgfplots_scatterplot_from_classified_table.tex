@@ -1,0 +1,50 @@
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+	%
+	\begin{axis}
+	[
+		scatter/classes=
+		{	% NO SPACES ARE ALLOWED!!!
+			1={mark=square*,blue},%
+			-1={mark=triangle*,red},%
+			2={mark=square*,blue},%
+			-2={mark=triangle*,red},%
+			3={mark=square*,blue},%
+			-3={mark=triangle*,red},%
+			4={mark=square*,blue},%
+			-4={mark=triangle*,red},%
+			5={mark=square*,blue},%
+			-5={mark=triangle*,red},%
+			6={mark=square*,blue},%
+			-6={mark=triangle*,red},%
+			7={mark=square*,blue},%
+			-7={mark=triangle*,red},%
+			8={mark=square*,blue},%
+			-8={mark=triangle*,red},%
+			9={mark=square*,blue},%
+			-9={mark=triangle*,red},%
+			10={mark=square*,blue},%
+			-10={mark=triangle*,red} % NO COMMAS HERE!!!
+		}
+	]
+		%
+		\addplot
+		[
+			scatter,
+			only marks,
+			scatter src	= explicit symbolic
+		]
+		table
+		[
+			x=x,
+			y=y,
+			meta=label,
+		]
+		{../DatavisualizationsTables/KMeansClassification.txt};
+		%
+	\end{axis}
+	%
+\end{tikzpicture}

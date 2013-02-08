@@ -1,0 +1,44 @@
+
+\begin{tikzpicture}
+	%
+	\begin{axis}
+	[
+		xmode			= linear, 
+		ymode			= linear,
+		zmode			= log, 
+		view			= {15}{30}, % {azimuth}{elevation}
+		mesh/ordering	= x varies,
+		grid			= major,
+		height			= 0.7\columnwidth,
+		width			= 0.9\columnwidth,
+		colorbar,
+		colorbar style	=
+		{
+			yticklabel = \pgfmathparse{10^(\tick/2)}\pgfmathprintnumber{\pgfmathresult} % for logarithmic z plots
+		},
+		colormap/blackwhite, % redyellow, greenyellow, bluered
+		shader			= interp,
+		point meta min	= {0.8}, 	% end of colormap
+		point meta max	= {2},		% begin of colormap
+		xlabel			= {$x$},
+		ylabel			= {$y$},
+		zlabel			= {$z$},
+		%xtick			= \empty,
+		%ytick			= \empty,
+		ztick			= \empty,
+		x dir			= reverse,
+		axis background/.style	= {fill = black!05!white},
+	]
+		%
+		\addplot3
+		[
+			surf,
+%			contour gnuplot = {number = 10}, % requires gnuplot and pdflatex -shell-escape main.tex from shell
+		]
+		file {../DatavisualizationsTables/Pgfplot3DSurf.txt};
+		%
+		\node (n) [coordinate] at (axis cs: 0,0) {};
+		%
+	\end{axis}
+	%
+\end{tikzpicture}
