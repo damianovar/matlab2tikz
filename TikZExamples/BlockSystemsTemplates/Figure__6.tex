@@ -1,0 +1,77 @@
+
+\begin{figure}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+
+% ------------------------------------------------------
+% NODES DEFINITION
+\matrix
+[
+	row sep		= 1cm,
+	column sep	= 1cm,
+]
+{
+	% ------------------------------ row 1
+	&
+	&
+	\node (nSystem) [BlocksStyle] {NL Plant}; &
+	\node [coordinate] (nM14) {}; &
+	\node (nOutput) {$y$}; \\
+	%
+	%
+	% ------------------------------ row 2
+	\node (nLeftSum) [SumNodesStyle] {}; &
+	\node (nError) [BlocksStyle] {$u^{eq}(y)$}; &
+	&
+	\node [coordinate, xshift = -0.7cm] (nM24) {}; &
+	\\
+	%
+	%
+	% ------------------------------ row 3
+	&
+	&
+	\node (nController) [BlocksStyle] {$K(y)$}; &
+	\node (nRightSum) [SumNodesStyle] {}; &
+	\node (nReference) {$r$}; \\
+};
+
+
+
+% ------------------------------------------------------
+% PATHS
+\draw [LinesStyle] (nLeftSum) |- (nSystem);
+\draw [LinesStyle] (nSystem) -- (nOutput);
+\draw [LinesStyle] (nError) -- (nLeftSum) node [near end, above] {$+$};
+\draw [LinesStyle] (nController) -| (nLeftSum) node [at end, below right] {$+$};
+\draw [LinesStyle] (nM14) -- (nRightSum) node [at end, above left] {$-$};
+\draw [LinesStyle] (nM14) |- (nError);
+\draw [LinesStyle] (nReference) -- (nRightSum) node [at end, above right] {$+$};
+\draw [LinesStyle] (nRightSum) -- (nController);
+\draw [LinesStyle] (nM24) |- (nController.15);
+
+
+
+
+% -------------------------
+% auxiliary nodes
+\node [coordinate, xshift = -0.5cm, yshift =  0.5cm] (nAux1) at (nLeftSum.north west) {};
+\node [coordinate, xshift =  0.7cm, yshift = -0.5cm] (nAux2) at (nRightSum.south east) {};
+%
+\draw [HighlightingStyle] (nAux1) -| (nAux2) -| (nAux1)
+node [above, pos = 0.43] {controller};
+
+
+
+
+\end{tikzpicture}
+%
+\caption{6.}
+\label{fig:6}
+%
+\end{center}
+\end{figure}

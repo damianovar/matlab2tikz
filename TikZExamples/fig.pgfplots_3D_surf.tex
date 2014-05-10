@@ -20,6 +20,12 @@
 		shader			= interp,
 		point meta min	= {0.8}, 	% end of colormap
 		point meta max	= {2},		% begin of colormap
+		every axis x label/.style				= {at={(xticklabel cs:1.1)}},
+		every axis y label/.style				= {at={(yticklabel cs:1.1)}},
+		every axis z label/.style				= {at={(zticklabel cs:1.2)}},
+		every inner x axis line/.append style	= {-latex, draw = black!50!white, thin},
+		every inner y axis line/.append style	= {-latex, draw = black!50!white, thin},
+		every inner z axis line/.append style	= {-latex, draw = black!50!white, thin},
 		xlabel			= {$x$},
 		ylabel			= {$y$},
 		zlabel			= {$z$},

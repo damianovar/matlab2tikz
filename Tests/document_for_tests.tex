@@ -1,0 +1,56 @@
+\documentclass{article}
+
+% note: load tikz AFTER setting \pdfminorversion
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{fit}
+\usetikzlibrary{matrix}
+\usetikzlibrary{positioning}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+% in case you want to externalize the figures -- decomment the right \tikzexternalize AND invoke pdflatex (or lualatex) with --shell-escape
+% \usetikzlibrary{external}
+% \tikzexternalize[shell escape=-enable-write18]
+% \tikzexternalize
+
+% NOTE FOR BEAMER USERS: Beamer messes around with catcodes. To solve the ``ampersand'' problem define the matrices as follows:
+% 
+% \matrix
+% (nMatrix)
+% [
+% 	row sep					= 1cm,
+% 	column sep				= 1cm,
+% 	ampersand replacement	= \&
+% ]
+% {
+% 	...
+% };
+
+\begin{document}
+
+
+\begin{tikzpicture}
+\begin{axis}
+[
+	width	= 0.8\columnwidth,
+	height	= 0.4\columnwidth,
+	xlabel	= {$x$},
+	ylabel	= {$y$},
+]
+
+	\addplot
+	table
+	[
+		x	= indexes,
+		y	= sine,
+	]
+	{dataset.txt};
+	
+\end{axis}
+\end{tikzpicture}
+
+
+\end{document}

@@ -1,0 +1,21 @@
+
+\begin{tikzpicture}
+\begin{axis}
+[
+	width	= 0.8\columnwidth,
+	height	= 0.4\columnwidth,
+	xlabel	= {$x$},
+	ylabel	= {$y$},
+]
+
+	\addplot
+	table
+	[
+		x	= indexes,
+		y	= sine,
+	]
+	{dataset.txt};
+	
+\end{axis}
+\end{tikzpicture}
+

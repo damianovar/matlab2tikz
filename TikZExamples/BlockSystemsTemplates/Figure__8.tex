@@ -1,0 +1,83 @@
+
+\begin{figure}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+
+
+% ------------------------------------------------------
+% NODES DEFINITION
+\matrix
+(nMatrix)
+[
+	row sep		= 1cm,
+	column sep	= 1cm,
+]
+{
+	% ------------------------------ row 1
+	\node (nInput) {$v$}; &
+	\node (nSum) [SumNodesStyle] {}; &
+	\node (nM13) [coordinate] {}; &
+	\node (nSystem) [BlocksStyle] {system}; &
+	\node (nM15) {}; &
+	\node (nOutput) {$y$}; \\
+	%
+	%
+	% ------------------------------ row 2
+	\node (nM21) [coordinate] {}; &
+	\node (nM22) [coordinate] {}; &
+	\node (nM23) [coordinate] {}; &
+	\node (nM24) [coordinate] {}; &
+	\node (nM25) [coordinate] {}; &
+	\node (nM26) [coordinate] {}; \\
+	%
+	%
+	% ------------------------------ row 3
+	\node (nM31) [coordinate] {}; &
+	\node (nM32) [coordinate] {}; &
+	\node (nController) [BlocksStyle] {L}; &
+	\node (nObserver) [BlocksStyle] {observer}; &
+	\node (nM35) [coordinate] {}; &
+	\\
+};
+
+
+
+% ------------------------------------------------------
+% PATHS
+\draw [LinesStyle] (nInput) -- (nSum) node [near end, below] {$+$};
+\draw [LinesStyle] (nSum) -- (nSystem) node [midway, above] {$u$};
+\draw [LinesStyle] (nSystem) -- (nOutput);
+\draw [LinesStyle, -] (nSystem) -| (nM35);
+\draw [LinesStyle] (nM35) -- (nObserver);
+\draw [LinesStyle] (nObserver) -- (nController) node [midway, above] {$\hat{x}$};
+\draw [LinesStyle] (nController) -| (nSum) node [at end, below left] {$+$};
+\draw [LinesStyle, -] (nM13) -- (nM23);
+\draw [LinesStyle] (nM23) -| (nObserver);
+
+
+
+
+% -------------------------
+% auxiliary nodes
+\node [coordinate, xshift = -0.5cm, yshift =  0.5cm] (nAux1) at (nSum.north west) {};
+\node [coordinate, xshift =  0.5cm, yshift =  0.5cm] (nAux2) at (nM23.north east) {};
+\node [coordinate, xshift =  0.5cm, yshift = -1.0cm] (nAux3) at (nM35.south east) {};
+%
+\draw [HighlightingStyle] (nAux1) -| (nAux2) -| (nAux3) -| (nAux1)
+node [above, pos = 0.43] {controller};
+
+
+
+
+\end{tikzpicture}
+%
+\caption{8.}
+\label{fig:8}
+%
+\end{center}
+\end{figure}

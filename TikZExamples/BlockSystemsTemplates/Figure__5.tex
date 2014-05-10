@@ -1,0 +1,71 @@
+
+\begin{figure}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+
+
+% ------------------------------------------------------
+% NODES DEFINITION
+\matrix
+(nMatrix)
+[
+	row sep		= 1cm,
+	column sep	= 1cm,
+]
+{
+	% ------------------------------ row 1
+	\node (nInput) {$u$}; &
+	\node (nLeftSum) [SumNodesStyle] {}; &
+	\node (nSystem) [BlocksStyle] {system}; &
+	\node (nM14) {}; &
+	\node (nOutput) {$y$}; \\
+	%
+	%
+	% ------------------------------ row 2
+	\node (nM21) {}; &
+	\node (nM22) {}; &
+	\node (nController) [BlocksStyle] {controller}; &
+	\node (nRightSum) [SumNodesStyle] {}; &
+	\node (nReference) {$r$}; \\
+};
+
+
+
+% ------------------------------------------------------
+% PATHS
+\draw [LinesStyle] (nInput) -- (nLeftSum) node [near end, below] {$+$};
+\draw [LinesStyle] (nLeftSum) -- (nSystem);
+\draw [LinesStyle] (nSystem) -- (nOutput);
+\draw [LinesStyle] (nSystem) -| (nRightSum) node [at end, above right] {$+$};
+\draw [LinesStyle] (nReference) -- (nRightSum) node [near end, above] {$+$};
+\draw [LinesStyle] (nRightSum) -- (nController);
+\draw [LinesStyle] (nController) -| (nLeftSum) node [at end, below left] {$+$};
+
+
+
+
+% -------------------------
+% auxiliary nodes
+\node [coordinate, xshift = -0.5cm, yshift =  0.5cm] (nAux1) at (nInput.north west) {};
+\node [coordinate, xshift =  0.5cm, yshift =  0.5cm] (nAux2) at (nLeftSum.north east) {};
+\node [coordinate, xshift =  0.5cm, yshift =  0.5cm] (nAux3) at (nRightSum.north east) {};
+\node [coordinate, xshift =  0.5cm, yshift = -0.5cm] (nAux4) at (nRightSum.south east) {};
+%
+\draw [HighlightingStyle] (nAux1) -| (nAux2) |- (nAux3) -- (nAux4) -| (nAux1)
+node [above, pos = 0.43] {controller};
+
+
+
+
+\end{tikzpicture}
+%
+\caption{5.}
+\label{fig:5}
+%
+\end{center}
+\end{figure}

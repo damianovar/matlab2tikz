@@ -114,5 +114,7 @@ function ExportBoxplot(		...
 		%
 	end;%
 	%
+	fprintf('%s exported\n', strFilename);
+	%
 end %
 

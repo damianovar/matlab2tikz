@@ -1,0 +1,32 @@
+\begin{figure}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+	%
+	\node (u)													{$u(t)$};
+	\node (system)		[BlocksStyle, right = 1cm of u]			{$g(k, \tau)$};
+	\node (samplerA)	[right = 1cm of system, coordinate]		{};
+	\node (samplerB)	[right = 0.5cm of samplerA, coordinate] {};
+	\node (samplerC)	[above = 0.5cm of samplerB, coordinate] {};
+	\node (sum)			[circle, draw, minimum size = 0.4cm, right = 1cm of samplerB] {+};
+	\node (y)			[right = 1cm of sum]					{$y(k)$};
+	\node (v)			[above = 0.5cm of sum]					{$v(k)$};
+	%
+	\draw [LinesStyle] (u) -- (system);
+	\draw [LinesStyle, -] (system) -- (samplerA);
+	\draw [LinesStyle] (samplerA) -- (samplerC);
+	\draw [LinesStyle, -, dotted] (samplerB) -- (samplerC);
+	\draw [LinesStyle] (samplerB) -- (sum);
+	\draw [LinesStyle] (v) -- (sum);
+	\draw [LinesStyle] (sum) -- (y);
+	%
+\end{tikzpicture}
+%
+\caption{17.}
+\label{fig:17}
+%
+\end{center}
+\end{figure}

@@ -1,0 +1,49 @@
+\begin{figure}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+% ------------------------------------------------------
+% NODES DEFINITION
+\matrix
+(nMatrix)
+[
+	row sep		= 1cm,
+	column sep	= 1cm,
+]
+{
+	% ------------------------------ row 1
+	\node (nInput) {$v$}; &
+	\node (nLeftSum) [SumNodesStyle] {}; &
+	\node (nSystem) [BlocksStyle] {plant}; &
+	\node (nM14) {}; &
+	\node (nOutput) {$y$}; \\
+	%
+	%
+	% ------------------------------ row 2
+	\node (nM21) {}; &
+	\node (nM22) {}; &
+	\node (nController) [BlocksStyle] {controller}; &
+	\node (nRightSum) [coordinate] {}; &
+	\\
+};
+
+% ------------------------------------------------------
+% PATHS
+\draw [LinesStyle] (nInput) -- (nLeftSum) node [near end, below] {$+$};
+\draw [LinesStyle] (nLeftSum) -- (nSystem) node [midway, above] {$u$};
+\draw [LinesStyle] (nSystem) -- (nOutput);
+\draw [LinesStyle, -] (nSystem) -| (nRightSum);
+\draw [LinesStyle] (nRightSum) -- (nController);
+\draw [LinesStyle] (nController) -| (nLeftSum) node [at end, below left] {$-$};
+
+\end{tikzpicture}
+%
+\caption{15.}
+\label{fig:15}
+%
+\end{center}
+\end{figure}

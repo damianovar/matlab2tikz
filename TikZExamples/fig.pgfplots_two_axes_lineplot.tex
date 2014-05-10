@@ -1,0 +1,77 @@
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+	\begin{axis}
+	[
+		scale only axis,
+		axis y line*			= left,
+		%
+		width					= 0.7\columnwidth,
+		height					= 0.3\columnwidth,
+		%
+		xmin					= 0,
+		xmax					= 24,
+		%
+		xlabel					= {hour},
+		xlabel near ticks,
+		xlabel shift			= -5,
+		%
+		ylabel					= {tariff},
+		ylabel near ticks,
+		ylabel style			= {text = \StrongPrimary},
+		%
+		axis background/.style	= {fill = black!05!white},
+	]
+		%
+		\addplot
+		[
+			const plot,
+			draw			= \StrongPrimary,
+			mark			= none,
+			line width		= 0.02cm,
+		]
+		table
+		[
+			x				= hour,
+			y				= tariff,
+		]
+		{../DatavisualizationsTables/active_house_scheduling.txt};
+		%
+	\end{axis}
+
+	\begin{axis}
+	[
+		scale only axis,
+		axis y line*			= right,
+		%
+		width					= 0.7\columnwidth,
+		height					= 0.3\columnwidth,
+		%
+		xmin					= 0,
+		xmax					= 24,
+		%
+		ylabel					= {\COO\ intensity },
+		ylabel near ticks,
+		ylabel style			= {text = \StrongSecondary},
+	]
+		%
+		\addplot
+		[
+			const plot,
+			draw			= \StrongSecondary,
+			mark			= none,
+			line width		= 0.02cm,
+		]
+		table
+		[
+			x				= hour,
+			y				= coo,
+		]
+		{../DatavisualizationsTables/active_house_scheduling.txt};
+		%
+	\end{axis}
+
+\end{tikzpicture}

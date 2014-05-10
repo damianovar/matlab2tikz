@@ -1,0 +1,47 @@
+
+\tikzset
+{
+	SumNodesStyle/.style =
+	{
+		% --------------------- shape properties ---------------------
+		shape			= circle,				% shape
+		minimum size	= 0.15cm,				% | minimum size of the node
+		rotate			= 0,					% angle of rotation
+		scale			= 1.0,					% scaling factor
+		%
+		%
+		% --------------------- border properties ---------------------
+		draw			= black,				% draw the border with this color
+		line width		= 0.02cm,				% thickness
+		%
+		%
+		% --------------------- node filling properties ---------------------
+		% possible choices:
+		% 1 - transparent	= keep all commented
+		% 2 - monocolored	= decomment only the ``fill'' line
+		% 3 - shaded		= decomment only the ``top color'' and ``bottom color'' lines
+%		fill			= red!10,				%
+% 		top color		= white,				%
+% 		bottom color	= red!70!black,			%
+		%
+		%
+		% --------------------- text properties ---------------------
+		% alignments: [flush left | left | flush center | center | flush right | right | justify]
+		align			= center,				% text alignment
+		text			= black,				% color of the fonts
+		font			= \normalsize\normalfont,	% shape and dimension of the font
+% 		inner xsep		= 0.2cm,				% min. dist. btw text and borders along x dimension
+% 		inner ysep		= 0.2cm,				% min. dist. btw text and borders along x dimension
+% 		text width		= 2.0cm,				% max. width of the text
+% 		anchor			= base,					% text ``wobbling'' btw various nodes [center | base | mid]
+		%
+		%
+		% --------------------- background image properties ---------------------
+% 		path picture	=								%
+% 		{\node at (path picture bounding box.center){	% [north | south | center | east | west]
+% 			\includegraphics							%
+% 			[height = 2.0cm, width = 1.0cm]				% stretching of the figure
+% 			{../Images/logo_dei_small}};}				% file path
+	}
+}
+

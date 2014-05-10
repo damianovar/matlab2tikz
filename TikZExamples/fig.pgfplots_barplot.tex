@@ -1,0 +1,54 @@
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+	%
+	\begin{axis}
+	[
+		width					= 0.9\columnwidth,
+		height					= 0.5\columnwidth,
+		%
+		ymin					= 0,
+		ymax					= 70,
+		%
+		xlabel					= {year},
+		xlabel style			= {align = center},
+		xlabel near ticks,
+		xlabel shift			= -1,
+		xtick					= {2015, 2020, 2025, 2030, 2035, 2040},
+		xticklabels				= {2015, 2020, 2025, 2030, 2035, 2040},
+		%
+		ylabel					= {\%},
+		ylabel style			= {align = center},
+		ylabel near ticks,
+		ylabel shift			= -1,
+		ytick					= {0, 10, ..., 60},
+		ymajorgrids,
+		%
+		nodes near coords,		% to plot the values at the end of the bars
+		axis background/.style	= {fill = black!05!white},
+		grid style 				= {thin, solid, black!20},
+	]
+		%
+		\addplot
+		[
+			ybar,
+			draw			= \StrongPrimary,
+			fill			= \StrongPrimary,
+			mark			= none,
+			line width		= 0.01cm,
+		]
+		coordinates
+		{
+			(2015,9.2)
+			(2020,20.2)
+			(2025,29.8)
+			(2030,39.1)
+			(2035,48.3)
+			(2040,56.5)
+		};
+		%
+	\end{axis}
+	%
+\end{tikzpicture}

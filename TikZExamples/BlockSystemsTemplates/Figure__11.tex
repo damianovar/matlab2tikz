@@ -1,0 +1,66 @@
+
+\begin{figure}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+
+
+% ------------------------------------------------------
+% NODES DEFINITION
+\matrix
+(nMatrix)
+[
+	row sep		= 1cm,
+	column sep	= 1cm,
+]
+{
+	% ------------------------------ row 1
+	\node (nInput) {$u$}; &
+	\node (nSystem) [BlocksStyle] {plant}; &
+	\node (nM14) {}; &
+	\node (nOutput) {$y$}; \\
+	%
+	%
+	% ------------------------------ row 2
+	\node (nM21) {}; &
+	\node (nController) [BlocksStyle] {controller}; &
+	\node (nSum) [SumNodesStyle] {}; &
+	\node (nReference) {$r$}; \\
+};
+
+
+
+% ------------------------------------------------------
+% PATHS
+\draw [LinesStyle] (nInput) -- (nSystem);
+\draw [LinesStyle] (nSystem) -- (nOutput);
+\draw [LinesStyle] (nSystem) -| (nSum) node [at end, above right] {$-$};
+\draw [LinesStyle] (nReference) -- (nSum) node [near end, above] {$+$};
+\draw [LinesStyle] (nSum) -- (nController);
+\draw [LinesStyle] (nController) -- (nM21);
+
+
+
+
+% -------------------------
+% auxiliary nodes
+\node [coordinate, xshift = -0.5cm, yshift =  0.5cm] (nAux1) at (nSystem.north west) {};
+\node [coordinate, xshift =  0.5cm, yshift = -1.0cm] (nAux2) at (nReference.south east) {};
+%
+\draw [HighlightingStyle] (nAux1) -| (nAux2) -| (nAux1)
+node [above, pos = 0.38] {augmented plant};
+
+
+
+
+\end{tikzpicture}
+%
+\caption{11.}
+\label{fig:11}
+%
+\end{center}
+\end{figure}

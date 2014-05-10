@@ -8,6 +8,7 @@ solid,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
 dashed,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
 }
 
+\tikzstyle{every pin} = [fill = \SoftPrimary, draw = black, font = \footnotesize, align = center]
 
 \begin{tikzpicture}
 [
@@ -17,9 +18,6 @@ dashed,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
 	%
 	\begin{axis}
 	[
-		name					= firstplot,
-		at						= {($(previousplot.east)+(1cm,0)$)},
-		anchor					= west,
 		xmode					= log, 
 		ymode					= linear,
 %		enlarge x limits		= 0.5,
@@ -44,9 +42,10 @@ dashed,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
 		ymax					= 1,
 		%
 		xlabel					= {$x$},
+		xlabel style			= {align = right, text width = 1cm},
 		xlabel near ticks,
 		xlabel shift			= -15,
-		every axis x label/.style		= {at={(xticklabel cs:1)}, anchor=west, yshift=0.55cm}
+		every axis x label/.style		= {at={(xticklabel cs:1)}, anchor = west, yshift = 0.55cm, align = right, text width = 1cm},
 		%
 		xtick					= {0, 0.2, ..., 1},
 		x tick style 			= {thick},
@@ -61,7 +60,7 @@ dashed,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
 		ylabel					= {$y$},
 		ylabel near ticks,
 		ylabel shift			= -15,
-		y label style		= {rotate = -60, anchor = west},
+		y label style			= {rotate = -60, anchor = west},
 		%
 		ytick					= {0, 0.2, ..., 1},
 		y tick style 			= {thick},
@@ -83,15 +82,39 @@ dashed,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
 			fill				= none,
 			inner xsep			= 0.1cm,
 			inner ysep			= 0.1cm,
-			nodes				= {inner ysep = 0.4cm},
+			nodes				= {inner ysep = 0.4cm, text depth = 0.15cm, text width = 1.5cm},
+			cells				= {anchor = east},
+% 			at					= {(1,0.5)}, % overrides 'legend pos'
+% 			anchor				= west,
 		},
 		legend cell align		= left, % left | center | right
 		%
 		title style				= { text width = 6cm, align = center, font = \bf, yshift = 1cm },
+		legend to name			= mylegend,
+		reverse legend			= false, % true | false
+		transpose legend		= false, % true | false
+		%
 		title					= {$p = b = 0.1$ \\ $N_{\max} = 200$},
 		%
 		axis background/.style	= {fill = black!05!white},
 		grid style 				= {thin, dashed, black!20},
+		%
+		name					= firstplot,
+		at						= {($(previousplot.east)+(1cm,0)$)},
+		anchor					= west,
+		%
+		% for plots having dates as coordinates
+% 		date coordinates in		= x,
+% 		xticklabel				= {\hour:\minute},
+% 		x tick label style		= {align = center},
+% 		date ZERO				= {2013-06-25},
+% 		xmin					= {2013-06-25 00:00},
+% 		xmax					= {2013-06-29 23:59},
+% 		xtick					= {2013-06-28 08:00,
+% 								   2013-06-28 08:15,
+% 								   2013-06-28 08:30,
+% 								   2013-06-28 08:45,
+% 								   2013-06-28 09:00}
 	]
 		%
 		\foreach \e in {15,20,...,50}
@@ -100,21 +123,32 @@ dashed,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
 			\addplot
 			[
 				const plot, % smooth | sharp plot | const plot | const plot mark right | jump mark left | jump mark right | xbar | ybar | xbar interval | ybar interval | xcomb | ycomb | only marks
-				dashed,
+				dashed, % solid | dotted | densely dotted | loosely dotted | dashed | densely dashed | loosely dashed | dashdotted | densely dashdotted | loosely dashdotted | dashdotdotted | densely dashdotdotted | loosely dashdotdotted 
 				draw			= black,
 				mark			= none,
 				line width		= 0.06cm,
+				area legend, % line legend | empty legend | xbar legend | xbar interval legend | mesh legend
 			]
 			table
 			[
-				%col sep		= comma,
-				%trim cells		= true,
+% 				col sep			= comma,
+% 				trim cells		= true,
 				x				= actual,
 				y				= bound3sigma,
 			]
 			{../DatavisualizationsTables/file_\e.txt};
 			\addlegendentry{$\delta = 0.1$};
+% 			\addlegendentryexpanded{$\delta = \e$}; % in case one needs to expand the argument of the foreach
+% 			coordinates
+% 			{
+% 				(0,0)
+% 				(1,2)
+% 				(2,8)
+% 			};
+% 			\closedcycle; % NOTE: in case you use this then you have to remove the ';' in the row above!
 		}
+		%
+		\node[coordinate, pin={[pin distance = 2cm]above:{$\alpha = 0.08, N = 5573$}}] at (axis cs:4.17,2673.92) {};
 		%
 		% --------------------------------------------------------------
 		\addplot

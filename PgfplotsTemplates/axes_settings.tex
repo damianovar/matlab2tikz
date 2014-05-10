@@ -1,0 +1,43 @@
+	xmode					= log, 
+	ymode					= linear,
+	%
+	enlarge x limits		= 0.5,
+	enlarge y limits		= 0.5,
+	%
+	axis x line				= bottom,	% bottom | middle | top
+	every inner x axis line/.append style	= {-latex},
+	hide x axis,
+	x dir					= reverse,
+	%
+	axis y line				= left,		% left | middle | right
+	every inner y axis line/.append style	= {-latex},
+	hide y axis,
+	y dir					= reverse,
+	%
+	axis on top,
+	%
+	xmin					= 0,
+	xmax					= 1,
+	ymin					= 0,
+	ymax					= 1,
+	%
+	xtick					= {0, 0.2, ..., 1},
+	x tick style 			= {thick},
+	xticklabels				= {0, 0.2, ..., 1},
+	x tick label style		= {rotate = -60, anchor = west},
+	xmajorgrids,
+	%
+	extra x ticks			= {3, 7, 10},
+	extra x tick labels		= {$t - N$, $t - T$, $t$},
+	extra x tick style		= {grid = major, rotate = -60, anchor = west},
+	%
+	ytick					= {0, 0.2, ..., 1},
+	y tick style 			= {thick},
+	yticklabels				= {0, 0.2, ..., 1},
+	y tick label style		= {rotate = -60, anchor = west},
+	ymajorgrids,
+	%
+	scaled ticks			= false, % true => will put, e.g., 10^4 | false won't
+	%
+	axis background/.style	= {fill = black!05!white},
+	grid style 				= {thin, dashed, black!20},

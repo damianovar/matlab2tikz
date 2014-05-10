@@ -1,0 +1,96 @@
+\pgfplotstabletypeset
+[
+	columns = {	% keep the curly parentheses in this way
+		algorithm,
+		MSE,
+		ACC,
+		FP,
+		FN},
+	%
+	every row 0 column 1/.style =
+	{
+		postproc cell content/.append style =
+		{
+			/pgfplots/table/@cell content/.add={$\bf}{$},
+		}
+	},
+	%
+	every row 1 column 2/.style =
+	{
+		postproc cell content/.append style =
+		{
+			/pgfplots/table/@cell content/.add={$\bf}{$},
+		}
+	},
+	%
+	every row 1 column 3/.style =
+	{
+		postproc cell content/.append style =
+		{
+			/pgfplots/table/@cell content/.add={$\bf}{$},
+		}
+	},
+	%
+	every row 1 column 4/.style =
+	{
+		postproc cell content/.append style =
+		{
+			/pgfplots/table/@cell content/.add={$\bf}{$},
+		}
+	},
+	%
+	every head row/.style =
+	{
+		before row	= \toprule,
+		after row	= \midrule,
+	},
+	%
+	columns/algorithm/.style =
+	{
+		string type,
+		column name	= {Algorithm},
+		column type = {c},			% l | c | r
+	},
+	%
+	columns/MSE/.style =
+	{
+		column name	= {MSE},
+		precision	= 3,
+		column type = {c},			% l | c | r
+		fixed,						% fixed | sci
+		fixed zerofill,				% fixed zerofill | sci zerofill
+	},
+	%
+	columns/ACC/.style =
+	{
+		column name	= {Accuracy},
+		precision	= 3,
+		column type = {c},			% l | c | r
+		fixed,						% fixed | sci
+		fixed zerofill,				% fixed zerofill | sci zerofill
+	},
+	%
+	columns/FP/.style =
+	{
+		column name	= {FP},
+		precision	= 3,
+		column type = {c},			% l | c | r
+		fixed,						% fixed | sci
+		fixed zerofill,				% fixed zerofill | sci zerofill
+	},
+	%
+	columns/FN/.style =
+	{
+		column name	= {FN},
+		precision	= 3,
+		column type = {c},			% l | c | r
+		fixed,						% fixed | sci
+		fixed zerofill,				% fixed zerofill | sci zerofill
+	},
+	%
+	every last row/.style =
+	{
+		after row	= \bottomrule,
+	},
+]
+{./DatavisualizationsTables/OfflineWithVentilation/performance_indexes_for_offline_estimators.txt}

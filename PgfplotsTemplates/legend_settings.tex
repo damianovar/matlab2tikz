@@ -1,0 +1,21 @@
+	legend pos				= south east, % south west | north east | north west | outer south east | outer south west | outer north east | outer north west | 
+	legend plot pos			= left, % right | none    [where to draw the line specifications]
+	legend columns			= -1, % [-1 to draw all entries horizontally]
+	legend entries			= {$\delta = 0.1 \;\;\;$, $\delta = 1$},
+	legend style			=
+	{
+		draw				= none,
+		fill				= none,
+		inner xsep			= 0.1cm,
+		inner ysep			= 0.1cm,
+		nodes				= {inner ysep = 0.4cm, text depth = 0.15cm, text width = 1.5cm},
+		cells				= {anchor = east},
+% 		at					= {(1,0.5)}, % overrides 'legend pos'
+% 		anchor				= west,
+	},
+	legend cell align		= left, % left | center | right
+	%
+	% this will export the legend in a way that then one can use \ref{mylegend} in the document -- there are problems with the externalization of this
+	legend to name			= mylegend,
+	reverse legend			= false, % true | false
+	transpose legend		= false, % true | false

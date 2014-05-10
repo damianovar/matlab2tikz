@@ -1,0 +1,108 @@
+
+\begin{figure}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+
+% ------------------------------------------------------
+% NODES DEFINITION
+\matrix
+[
+	row sep		= 1cm,
+	column sep	= 1cm,
+]
+{
+	% ------------------------------ row 1
+	\node (nInput) {$u$}; &
+	\node (nM12) [coordinate] {}; &
+	\node (nSystem) [BlocksStyle] {system}; &
+	&
+	&
+	&
+	&
+	&
+	\\
+	%
+	%
+	% ------------------------------ row 2
+	&
+	&
+	&
+	&
+	&
+	&
+	\node (nK) [BlocksStyle] {$K$}; &
+	\node (nRightSum) [SumNodesStyle] {}; &
+	\\
+	%
+	%
+	% ------------------------------ row 3
+	&
+	&
+	\node (nB) [BlocksStyle] {$B$}; &
+	\node (nLeftSum) [SumNodesStyle] {}; &
+	\node (nIntegrator) [BlocksStyle] {$\int $}; &
+	\node (nM36) [coordinate] {}; &
+	\node (nC) [BlocksStyle] {$C$}; &
+	&
+	\\
+	%
+	%
+	% ------------------------------ row 4
+	&
+	&
+	\node (nM43) [coordinate] {}; &
+	&
+	\node (nA) [BlocksStyle] {$A$}; &
+	&
+	&
+	&
+	\node (nState) {$\hat{x}$}; \\
+};
+
+
+
+% ------------------------------------------------------
+% PATHS
+\draw [LinesStyle] (nInput) -- (nSystem);
+\draw [LinesStyle] (nSystem) -| (nRightSum)
+	node [at end, above right] {$+$}
+	node [midway, above] {$y$};
+\draw [LinesStyle] (nRightSum) -- (nK);
+\draw [LinesStyle] (nK) -| (nLeftSum) node [at end, above left] {$+$};
+\draw [LinesStyle] (nM12) |- (nB);
+\draw [LinesStyle] (nB) |- (nLeftSum) node [at end, below left] {$+$};
+\draw [LinesStyle] (nLeftSum) -- (nIntegrator);
+\draw [LinesStyle] (nIntegrator) -- (nC) node [midway, above] {$\hat{x}$};
+\draw [LinesStyle] (nC) -| (nRightSum)
+	node [at end, below right] {$-$}
+	node [midway, right] {$\hat{y}$};
+\draw [LinesStyle] (nA) -| (nLeftSum) node [at end, below right] {$+$};
+\draw [LinesStyle] (nM36) |- (nState);
+\draw [LinesStyle] (nM36) |- (nA);
+
+
+
+
+% -------------------------
+% auxiliary nodes
+\node [coordinate, xshift =  0.5cm, yshift =  0.5cm] (nAux1) at (nRightSum.north east) {};
+\node [coordinate, xshift = -1.5cm, yshift = -0.8cm] (nAux2) at (nM43.south west) {};
+%
+\draw [HighlightingStyle] (nAux1) -| (nAux2) -| (nAux1)
+node [above, pos = 0.43] {observer};
+
+
+
+
+\end{tikzpicture}
+%
+\caption{14.}
+\label{fig:14}
+%
+\end{center}
+\end{figure}

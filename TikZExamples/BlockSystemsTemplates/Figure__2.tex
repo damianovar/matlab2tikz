@@ -1,0 +1,56 @@
+
+\begin{figure}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+
+% ------------------------------------------------------
+% NODES DEFINITION
+\matrix
+[
+	row sep		= 1cm,
+	column sep	= 1cm,
+]
+{
+	% ------------------------------ row 1
+	&
+	\node (nInputError) {$u^{er}$}; &
+	&
+	\node (nOutputError) {$y^{er}$}; &
+	\\
+	%
+	%
+	% ------------------------------ row 2
+	\node (nInput) {$u$}; &
+	\node (nLeftSum) [SumNodesStyle] {}; &
+	\node (nSystem) [BlocksStyle] {Jacobian \\ linearizator}; &
+	\node (nRightSum) [SumNodesStyle] {}; &
+	\node (nOutput) {$y$}; \\
+};
+
+
+
+% ------------------------------------------------------
+% PATHS
+\draw [LinesStyle] (nInput) -- (nLeftSum) node [near end, above] {$+$};
+\draw [LinesStyle] (nInputError) -- (nLeftSum) node [near end, left] {$-$};
+\draw [LinesStyle] (nLeftSum) -- (nSystem) node [midway, above] {$\tilde{u}$};
+\draw [LinesStyle] (nSystem) -- (nRightSum)
+	node [midway, above] {$\tilde{y}$}
+	node [near end, above] {$+$}; % the last semicolon closes the initial \draw
+\draw [LinesStyle] (nRightSum) -- (nOutput);
+\draw [LinesStyle] (nOutputError) -- (nRightSum) node [near end, left] {$-$};
+
+
+
+\end{tikzpicture}
+%
+\caption{2.}
+\label{fig:2}
+%
+\end{center}
+\end{figure}

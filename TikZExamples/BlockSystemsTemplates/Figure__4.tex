@@ -1,0 +1,56 @@
+
+\begin{figure}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+
+% ------------------------------------------------------
+% NODES DEFINITION
+\matrix
+[
+	row sep		= 1cm,
+	column sep	= 1cm,
+]
+{
+	% ------------------------------ row 1
+	&
+	\node (nInputError) {$u^{er}$}; &
+	&
+	\node (nOutputError) {$y$}; &
+	\\
+	%
+	%
+	% ------------------------------ row 2
+	\node (nInput) {$\tilde{u}$}; &
+	\node (nLeftSum) [SumNodesStyle] {}; &
+	\node (nSystem) [BlocksStyle] {controller}; &
+	\node (nRightSum) [SumNodesStyle] {}; &
+	\node (nOutput) {$\tilde{r}$}; \\
+};
+
+
+
+% ------------------------------------------------------
+% PATHS
+\draw [LinesStyle] (nOutput) -- (nRightSum) node [near end, above] {$+$};
+\draw [LinesStyle] (nOutputError) -- (nRightSum) node [near end, right] {$-$};
+\draw [LinesStyle] (nRightSum) -- (nSystem);
+\draw [LinesStyle] (nSystem) -- (nLeftSum)
+	node [midway, above] {$\tilde{u}$}
+	node [near end, above] {$+$};
+\draw [LinesStyle] (nInputError) -- (nLeftSum) node [near end, right] {$+$};
+\draw [LinesStyle] (nLeftSum) -- (nInput);
+
+
+
+\end{tikzpicture}
+%
+\caption{4.}
+\label{fig:4}
+%
+\end{center}
+\end{figure}

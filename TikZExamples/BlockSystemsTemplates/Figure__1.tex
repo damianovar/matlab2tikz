@@ -1,0 +1,39 @@
+
+\begin{figure}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+
+% ------------------------------------------------------
+% NODES DEFINITION
+\matrix
+[
+	row sep		= 1cm,
+	column sep	= 1cm,
+]
+{
+	% ------------------------------ row 1
+	\node (nInput) {$u$}; &
+	\node (nSystem) [BlocksStyle] {system}; &
+	\node (nOutput) {$y$}; \\
+};
+
+
+
+% ------------------------------------------------------
+% PATHS
+\draw [LinesStyle] (nInput) -- (nSystem);
+\draw [LinesStyle] (nSystem) -- (nOutput);
+
+
+\end{tikzpicture}
+%
+\caption{1.}
+\label{fig:1}
+%
+\end{center}
+\end{figure}

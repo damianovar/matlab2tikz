@@ -1,3 +1,12 @@
+\documentclass{article}
+\usepackage{tikz}	% (note: AFTER \pdfminorversion)
+\usetikzlibrary{matrix}
+\usetikzlibrary{fit}
+\usetikzlibrary{positioning}
+
+
+\begin{document}
+
 \begin{tikzpicture}
 [
 	%matrix of nodes/.style			= % CONFLICTS WITH CALLING (nameofthematrix-i-j)
@@ -44,6 +53,10 @@
 	\node [fill = black, fill opacity = 0.1, fit = (mymatrix-1-1) (mymatrix-3-1)] {};
 	
 	\node [left = of mymatrix, anchor = west] {$a = $};
-	
-	
+	\node (j) [below = of mymatrix-3-2, anchor = north] {$j$};
+
+	\draw [thick, -latex] (j) -- (mymatrix-3-2);
+
 \end{tikzpicture}
+
+\end{document}

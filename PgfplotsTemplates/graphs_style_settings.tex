@@ -1,0 +1,84 @@
+
+% cycle lists
+%
+% A) copy and edit the following OUTSIDE \begin/\end{tikzpicture}
+\pgfplotscreateplotcyclelist{mycyclelist}{%
+solid,	line width=0.02cm,	black,			opacity=0.8,	mark=none\\%
+dashed,	line width=0.02cm,	black,			opacity=0.8,	mark=none\\%
+solid,	line width=0.05cm,	black!30!white,	opacity=0.8,	mark=none\\%
+dashed,	line width=0.05cm,	black!30!white,	opacity=0.8,	mark=none\\%
+solid,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
+dashed,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
+}
+%
+% B) copy the following INSIDE the options very after \begin{axis}
+	cycle list name			= mycyclelist,
+
+
+
+
+
+	% lineplots
+	\addplot
+	[
+		const plot, % smooth | sharp plot | const plot | const plot mark right | jump mark left | jump mark right | xbar | ybar | xbar interval | ybar interval | xcomb | ycomb | only marks
+		dashed, % solid | dotted | densely dotted | loosely dotted | dashed | densely dashed | loosely dashed | dashdotted | densely dashdotted | loosely dashdotted | dashdotdotted | densely dashdotdotted | loosely dashdotdotted 
+		draw			= black,
+		mark			= none,
+		line width		= 0.06cm,
+		area legend, % line legend | empty legend | xbar legend | xbar interval legend | mesh legend
+	]
+	table
+	[
+% 				col sep			= comma,
+% 				trim cells		= true,
+		x				= actual,
+		y				= bound3sigma,
+	]
+	{../DatavisualizationsTables/file_\e.txt};
+
+
+
+
+	% scatterplots
+	\addplot
+	[
+		scatter,
+		scatter/use mapped color = {black},
+		only marks,
+		mark options	=
+		{
+			scale 		= 1.2,
+			draw		= black,
+			fill		= black,
+			opacity		= 0.1
+		},
+		mark			= triangle*
+		%
+		% more refined control:
+		% mark				= text, % requires \usetikzlibrary{plotmarks}
+		% text mark			= {{\tiny{$9$}}}, % if you want some text inside
+		% text mark as node	= true, % allow to use ``text mark style''
+		% text mark style		=
+		% {
+			% rectangle,
+			% rounded corners	= 0.2,
+			% draw			= black!50!white,
+			% draw opacity	= 0.6,
+			% fill			= black!10!white,
+			% fill opacity	= 1,
+			% thick,
+			% inner xsep		= 1,
+			% inner ysep		= 1,
+			% minimum width	= 10,
+			% minimum height	= 4,
+		% }
+	]
+	table
+	[
+		x=actual,
+		y=bound0sigma,
+	]
+	{dataset.txt};
+
+

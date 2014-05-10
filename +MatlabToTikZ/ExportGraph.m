@@ -65,9 +65,9 @@ function ExportGraph(	strFileName,			...
 	fprintf(fidNodes, '\n');
 	%
 	% write the data
-	for iNode = 1:tGraph.numberOfNodes;
+	for iNode = 1:tGraph.iNumberOfNodes;
 		%
-		fprintf(fidNodes, '%.5f %.5f', tGraph.xNodeCoordinates(iNode), tGraph.yNodeCoordinates(iNode) );
+		fprintf(fidNodes, '%.5f %.5f', tGraph.aafNodesPositions(iNode, 1), tGraph.aafNodesPositions(iNode, 2) );
 		%
 		if( bNodesStatusIsProvided )
 			%
@@ -96,9 +96,9 @@ function ExportGraph(	strFileName,			...
 	% header
 	fprintf(fidLinks, 'xstart ystart towardsx towardsy\n');
 	%
-	for iNodeA = 1:tGraph.numberOfNodes;
+	for iNodeA = 1:tGraph.iNumberOfNodes;
 		%
-		for iNodeB = 1:tGraph.numberOfNodes;
+		for iNodeB = 1:tGraph.iNumberOfNodes;
 			%
 			if(iNodeA == iNodeB)
 				%
@@ -107,13 +107,13 @@ function ExportGraph(	strFileName,			...
 			else%
 				%
 				% check if there is the link
-				if( tGraph.adjacencyMatrix(iNodeA, iNodeB) )
+				if( tGraph.aaiAdjacencyMatrix(iNodeA, iNodeB) )
 					%
 					fprintf(fidLinks, '%.5f %.5f %.5f %.5f',											...
-							tGraph.xNodeCoordinates(iNodeA),										...
-							tGraph.yNodeCoordinates(iNodeA),										...
-							tGraph.xNodeCoordinates(iNodeB) - tGraph.xNodeCoordinates(iNodeA),	...
-							tGraph.yNodeCoordinates(iNodeB) - tGraph.yNodeCoordinates(iNodeA));
+							tGraph.aafNodesPositions(iNodeA, 1),										...
+							tGraph.aafNodesPositions(iNodeA, 2),										...
+							tGraph.aafNodesPositions(iNodeB, 1) - tGraph.aafNodesPositions(iNodeA, 1),	...
+							tGraph.aafNodesPositions(iNodeB, 2) - tGraph.aafNodesPositions(iNodeA, 2));
 					%
 					fprintf(fidLinks, '\n');
 					%

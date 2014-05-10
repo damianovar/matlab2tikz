@@ -1,0 +1,52 @@
+
+\begin{figure}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+
+% ------------------------------------------------------
+% NODES DEFINITION
+\matrix
+[
+	row sep		= 1cm,
+	column sep	= 1cm,
+]
+{
+	% ------------------------------ row 1
+	\node (nInput) {$v$}; &
+	\node (nSum) [SumNodesStyle] {}; &
+	&
+	\node (nSystem) [BlocksStyle] {system}; &
+	\node (nOutput) {$y$}; \\
+	%
+	%
+	% ------------------------------ row 2
+	&
+	&
+	\node (nController) [BlocksStyle] {$L$}; &
+	&
+	\\
+};
+
+
+
+% ------------------------------------------------------
+% PATHS
+\draw [LinesStyle] (nInput) -- (nSum) node [near end, above] {$+$};
+\draw [LinesStyle] (nSum) -- (nSystem) node [midway, above] {$u$};
+\draw [LinesStyle] (nController) -| (nSum) node [at end, below left] {$+$};
+\draw [LinesStyle] (nSystem) -- (nOutput);
+\draw [LinesStyle, dotted] (nSystem) |- (nController) node [near end, above] {$x$};
+
+
+\end{tikzpicture}
+%
+\caption{7.}
+\label{fig:7}
+%
+\end{center}
+\end{figure}

@@ -1,0 +1,28 @@
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+\node (building)		[BlocksStyle]								{building};
+\node (controller)		[BlocksStyle, below = 0.5cm of building]	{controller};
+\node (disturbances)	[above = 0.5cm of building]					{(forecasted) disturbances};
+
+\node (tempLeft)		[coordinate, left = 1cm of building]		{};
+\node (tempRight)		[coordinate, right = 1cm of building]		{};
+
+\draw [LinesStyle, latex-]		(building)		-- (tempLeft);
+\draw [LinesStyle, -]			(building)		-- (tempRight);
+\draw [LinesStyle, -]			(controller)	-| (tempLeft);
+\draw [LinesStyle, latex-]		(controller)	-| (tempRight);
+\draw [LinesStyle, -latex]		(disturbances)	-- (building);
+
+\end{tikzpicture}
+%
+\caption{17.}
+\label{fig:17}
+%
+\end{center}
+\end{figure}

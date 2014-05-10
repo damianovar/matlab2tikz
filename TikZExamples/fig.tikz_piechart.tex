@@ -1,0 +1,54 @@
+\begin{tikzpicture}
+[
+    xscale  = 1,    % to scale horizontally everything but the text
+    yscale  = 1,    % to scale vertically everything but the text
+]
+	
+	\def\InnerRadius{1.6cm}
+	\def\OuterRadius{2cm}
+	\def\TextRadius{2.1cm}
+	
+	\draw
+	[
+		fill			= white,
+		draw 		= black!50!white, 
+		line width	= 0.02cm,
+	]
+	(0,0) circle (\OuterRadius);
+	
+	\draw [fill = \SoftPrimary, draw = none]
+	(0,0) -- +(90:\OuterRadius) arc [start angle = 90, delta angle = 144, radius = \OuterRadius] -- (0,0);
+	\node [text = \StrongPrimary, anchor = south east, align = center]
+	at (162:\TextRadius) {Buildings \\ 40\% \\ (XXX TWh)};
+	
+	\draw [fill = white, draw = none]
+	(0,0) -- +(234:\OuterRadius) arc [start angle = 234, delta angle = 101, radius = \OuterRadius] -- (0,0);
+	\node [text = black, anchor = north west, align = center]
+	at (280:\TextRadius) {Transportation \\ 32\% \\ (XXX TWh)};
+	
+	\draw [fill = \SoftSecondary, draw = none]
+	(0,0) -- +(335:\OuterRadius) arc [start angle = 335, delta angle = 115, radius = \OuterRadius] -- (0,0);
+	\node [text = \StrongSecondary, anchor = west, align = center]
+	at (390:\TextRadius) {Industry \\ 28\% \\ (XXX TWh)};
+	
+	\foreach \radiusangle in {0,15,...,345}
+	{
+		\draw [black!50!white] (0,0) -- +(\radiusangle:\OuterRadius);
+	};
+	
+	\draw
+	[
+		fill		= white,
+		draw 		= black!50!white, 
+		line width	= 0.02cm,
+	]
+	(0,0) circle (\InnerRadius);
+	
+	\node
+	[
+		align = center,
+	]
+	at (0,0)
+	{total: \\ TODO};
+	
+\end{tikzpicture}
