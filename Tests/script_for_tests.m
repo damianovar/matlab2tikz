@@ -11,6 +11,11 @@ aiIndexes = 1:200;
 afSine		= sin( aiIndexes / 100 );
 afCosine	= cos( aiIndexes / 100 );
 
+figure(1)
+hold on
+plot(aiIndexes, afSine, 'b')
+plot(aiIndexes, afCosine, 'k')
+
 MatlabToTikZ.ExportLineplot(				...
 	'dataset_without_dates.txt',			... filename
 	[ aiIndexes', afSine', afCosine' ],		... data (column-wise)

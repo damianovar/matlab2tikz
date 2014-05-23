@@ -14,6 +14,7 @@
 % in case you want to externalize the figures -- decomment the right \tikzexternalize AND invoke pdflatex (or lualatex) with --shell-escape
 % \usetikzlibrary{external}
 % \tikzexternalize[shell escape=-enable-write18]
+% \tikzset{external/force remake}										%
 % \tikzexternalize
 
 % NOTE FOR BEAMER USERS: Beamer messes around with catcodes. To solve the ``ampersand'' problem define the matrices as follows:
@@ -31,26 +32,20 @@
 
 \begin{document}
 
+\def\MyStyle
+{
+	legend plot pos			= left, % right | none    [where to draw the line specifications]
+	legend columns			= 1, % [-1 to draw all entries horizontally]
+	legend style			=
+	{
+		draw				= black,
+		fill				= black!10!white,
+		at					= {(0.5,0)}, % overrides 'legend pos'
+		anchor				= south,
+	},
+	legend cell align		= left, % left | center | right
+}
 
-\begin{tikzpicture}
-\begin{axis}
-[
-	width	= 0.8\columnwidth,
-	height	= 0.4\columnwidth,
-	xlabel	= {$x$},
-	ylabel	= {$y$},
-]
-
-	\addplot
-	table
-	[
-		x	= indexes,
-		y	= sine,
-	]
-	{dataset.txt};
-	
-\end{axis}
-\end{tikzpicture}
-
+\input{figure_myfigure}
 
 \end{document}

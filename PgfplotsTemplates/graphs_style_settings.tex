@@ -1,20 +1,4 @@
 
-% cycle lists
-%
-% A) copy and edit the following OUTSIDE \begin/\end{tikzpicture}
-\pgfplotscreateplotcyclelist{mycyclelist}{%
-solid,	line width=0.02cm,	black,			opacity=0.8,	mark=none\\%
-dashed,	line width=0.02cm,	black,			opacity=0.8,	mark=none\\%
-solid,	line width=0.05cm,	black!30!white,	opacity=0.8,	mark=none\\%
-dashed,	line width=0.05cm,	black!30!white,	opacity=0.8,	mark=none\\%
-solid,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
-dashed,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
-}
-%
-% B) copy the following INSIDE the options very after \begin{axis}
-	cycle list name			= mycyclelist,
-
-
 
 
 
@@ -80,5 +64,24 @@ dashed,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
 		y=bound0sigma,
 	]
 	{dataset.txt};
+
+
+
+
+
+% cycle lists
+%
+% A) copy and edit the following OUTSIDE \begin/\end{tikzpicture}
+\pgfplotscreateplotcyclelist{mycyclelist}{%
+solid,	line width=0.02cm,	black,			opacity=0.8,	mark=none\\%
+dashed,	line width=0.02cm,	black,			opacity=0.8,	mark=none\\%
+solid,	line width=0.05cm,	black!30!white,	opacity=0.8,	mark=none\\%
+dashed,	line width=0.05cm,	black!30!white,	opacity=0.8,	mark=none\\%
+solid,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
+dashed,	line width=0.07cm,	black!50!white,	opacity=0.8,	mark=none\\%
+}
+%
+% B) copy the following INSIDE the options very after \begin{axis}
+	cycle list name			= mycyclelist,
 
 

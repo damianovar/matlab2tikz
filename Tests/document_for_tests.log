@@ -1,7 +1,5 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2013.11.9)  10 MAY 2014 13:42
-entering extended mode
+This is LuaTeX, Version beta-0.76.0-2013070111 (rev 4627)  (format=lualatex 2014.3.12)  23 MAY 2014 09:55
  restricted \write18 enabled.
- %&-line parsing enabled.
 **document_for_tests.tex
 (./document_for_tests.tex
 LaTeX2e <2011/06/27>
@@ -68,6 +66,28 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/luatex-loader.sty
+Package: luatex-loader 2010/03/09 v0.4 Lua module loader (HO)
+
+(/usr/share/texlive/texmf-dist/scripts/oberdiek/oberdiek.luatex.lua))
+\pdftexcmds@toks=\toks16
+)
 \Gread@gobject=\count87
 ))
 \Gin@req@height=\dimen103
@@ -78,11 +98,11 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks16
-\pgfkeys@temptoks=\toks17
+\pgfkeys@pathtoks=\toks17
+\pgfkeys@temptoks=\toks18
 
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks18
+\pgfkeys@tmptoks=\toks19
 ))
 \pgf@x=\dimen105
 \pgf@y=\dimen106
@@ -145,9 +165,9 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 \pgfmath@dimen=\dimen113
 \pgfmath@count=\count94
 \pgfmath@box=\box27
-\pgfmath@toks=\toks19
-\pgfmath@stack@operand=\toks20
-\pgfmath@stack@operation=\toks21
+\pgfmath@toks=\toks20
+\pgfmath@stack@operand=\toks21
+\pgfmath@stack@operation=\toks22
 )
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
@@ -259,8 +279,8 @@ Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
 \pgffor@iter=\dimen139
 \pgffor@skip=\dimen140
-\pgffor@stack=\toks22
-\pgffor@toks=\toks23
+\pgffor@stack=\toks23
+\pgffor@toks=\toks24
 ))
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
@@ -318,92 +338,107 @@ File: tikzlibrarymatrix.code.tex 2008/06/18 v2.10 (rcs-revision 1.2)
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryposit
 ioning.code.tex
 File: tikzlibrarypositioning.code.tex 2008/10/06 v2.10 (rcs-revision 1.7)
-) (/usr/share/texmf/tex/latex/pgfplots/pgfplots.sty
-(/usr/share/texmf/tex/generic/pgfplots/pgfplots.revision.tex)
-Package: pgfplots 2013/03/17 v1.8 Data Visualization (1.8)
+) (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/share/te
+xlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2013/03/17 v1.8 Data Visualization (1.8-3-gaf58a29)
 
-(/usr/share/texmf/tex/generic/pgfplots/pgfplots.code.tex
-(/usr/share/texmf/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks24
-\t@pgfplots@tokb=\toks25
-\t@pgfplots@tokc=\toks26
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks25
+\t@pgfplots@tokb=\toks26
+\t@pgfplots@tokc=\toks27
 \pgfplots@tmpa=\dimen149
 \c@pgfplots@coordindex=\count107
 \c@pgfplots@scanlineindex=\count108
 
-(/usr/share/texmf/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex))
-(/usr/share/texmf/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
-(/usr/share/texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader
-.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
+.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_loader.code.tex
 Package pgfplots: loading complementary code for your PGF version...
 
-(/usr/share/texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_misc.c
-ode.tex)
-(/usr/share/texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfkey
-s.code.tex
-\pgfkeys@pathtoks=\toks27
-\pgfkeys@temptoks=\toks28
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_misc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks28
+\pgfkeys@temptoks=\toks29
 
-(/usr/share/texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfkey
-sfiltered.code.tex
-\pgfkeys@tmptoks=\toks29
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfkeysfiltered.code.tex
+\pgfkeys@tmptoks=\toks30
 ))
-(/usr/share/texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfmat
-hfloat.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count109
 )
-(/usr/share/texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgflib
-raryplothandlers.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2012/09/11 v2.10 (rcs-revision 1.17)
 \pgf@plot@mark@count=\count110
 \pgfplotmarksize=\dimen150
 )
-(/usr/share/texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgflib
-raryfpu.code.tex)
-(/usr/share/texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfcor
-escopes.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgflibraryfpu.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2012/11/30  (rcs-revision 1.38)
 \pgfpic=\box35
 \pgf@hbox=\box36
 \pgf@layerbox@main=\box37
 \pgf@picture@serial@count=\count111
 )
-(/usr/share/texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfcor
-elayers.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2012/11/07  (rcs-revision 1.5)
 ))
-(/usr/share/texmf/tex/generic/pgfplots/util/pgfplotsutil.code.tex
-(/usr/share/texmf/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code
-.tex)
-(/usr/share/texmf/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.c
-ode.tex)
-(/usr/share/texmf/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructure.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructureext.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
+.code.tex
 \c@pgfplotsarray@tmp=\count112
 )
-(/usr/share/texmf/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex)
-(/usr/share/texmf/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
+x.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
+d.code.tex
 \c@pgfplotstable@counta=\count113
-\t@pgfplotstable@a=\toks30
+\t@pgfplotstable@a=\toks31
 )
-(/usr/share/texmf/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex)
-(/usr/share/texmf/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
-(/usr/share/texmf/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex))
-(/usr/share/texmf/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex)
-(/usr/share/texmf/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code
-.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.te
+x
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.co
+de.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
+fshading.code.tex
 \c@pgfplotslibrarysurf@no=\count114
 
-(/usr/share/texmf/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsy
-s-pdftex.def)))
-(/usr/share/texmf/tex/generic/pgfplots/util/pgfplotscolormap.code.tex
-(/usr/share/texmf/tex/generic/pgfplots/util/pgfplotscolor.code.tex))
-(/usr/share/texmf/tex/generic/pgfplots/pgfplotsstackedplots.code.tex)
-(/usr/share/texmf/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
-(/usr/share/texmf/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex))
-(/usr/share/texmf/tex/generic/pgfplots/pgfplots.scaling.code.tex)
-(/usr/share/texmf/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex)
-(/usr/share/texmf/tex/generic/pgfplots/pgfplotsticks.code.tex)
-(/usr/share/texmf/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
+shading.pgfsys-pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.
+tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.t
+ex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.cod
+e.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecor
 ations.code.tex
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
@@ -441,27 +476,25 @@ File: tikzlibraryplotmarks.code.tex 2008/01/09 v2.10 (rcs-revision 1.1)
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2010/10/15 v2.10 (rcs-revision 1.12)
 )))
-(/usr/share/texmf/tex/generic/pgfplots/libs/tikzlibrarypgfplots.dateplot.code.t
-ex (/usr/share/texmf/tex/latex/pgf/utilities/pgfcalendar.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.da
+teplot.code.tex (/usr/share/texmf/tex/latex/pgf/utilities/pgfcalendar.sty
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfcalendar.code.tex
 File: pgfcalendar.code.tex 2007/07/23 v2.10 (rcs-revision 1.11)
 \pgfcalendarcurrentjulian=\count117
 )))
 (./document_for_tests.aux)
-\openout1 = `document_for_tests.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 33.
+LaTeX Font Info:    ... okay on input line 33.
  ABD: EveryShipout initializing macros
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -470,30 +503,13 @@ LaTeX Font Info:    ... okay on input line 32.
 \scratchbox=\box39
 \nofMPsegments=\count119
 \nofMParguments=\count120
-\everyMPshowfont=\toks31
+\everyMPshowfont=\toks32
 \MPscratchCnt=\count121
 \MPscratchDim=\dimen165
 \MPnumerator=\count122
 \makeMPintoPDFobject=\count123
-\everyMPtoPDFconversion=\toks32
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+\everyMPtoPDFconversion=\toks33
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -510,50 +526,58 @@ Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
 )))
 Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG
+,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+
 ))
 
-Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
-ick labels; missing features). Consider writing \pgfplotsset{compat=1.8} into y
-our preamble.
- on input line 32.
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
+ck labels; missing features). Consider writing \pgfplotsset{compat=1.8} into you
+r preamble.
+ on input line 33.
 
-PGFPlots: reading {dataset.txt}
+(./figure_myfigure.tex
+PGFPlots: reading {dataset_without_dates.txt}
+PGFPlots: reading {dataset_without_dates.txt}
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 52.
+(Font)              <7> on input line 51.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 52.
-[1
+(Font)              <5> on input line 51.
+PGFPlots: reading {dataset_without_dates.txt}
+PGFPlots: reading {dataset_without_dates.txt}
+
+Overfull \hbox (207.7432pt too wide) in paragraph at lines 107--108
+[][][] 
+ []
+
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-(./document_for_tests.aux) ) 
-Here is how much of TeX's memory you used:
- 17829 strings out of 493307
- 439314 string characters out of 6139905
- 625654 words of memory out of 5000000
- 20940 multiletter control sequences out of 15000+600000
- 3640 words of font info for 14 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 56i,9n,93p,743b,1658s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr10.pfb>
-Output written on document_for_tests.pdf (1 page, 36712 bytes).
-PDF statistics:
- 19 PDF objects out of 1000 (max. 8388607)
- 13 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+(./document_for_tests.aux) )
+
+Here is how much of LuaTeX's memory you used:
+ 18458 strings out of 493819
+ 100000,794899 words of node,token memory allocated
+ 264 words of node memory still in use:
+   2 hlist, 1 vlist, 1 rule, 2 glue, 40 glue_spec, 1 write nodes
+   avail lists: 2:39,3:1395,4:1442,5:8,6:64,7:1,9:232
+ 21531 multiletter control sequences out of 65536+600000
+ 25 fonts using 994935 bytes
+ 56i,17n,74p,742b,1878s stack positions out of 5000i,500n,10000p,200000b,100000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on document_for_tests.pdf (1 page, 42567 bytes).
+
+PDF statistics: 27 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 131072)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

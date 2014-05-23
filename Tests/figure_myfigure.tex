@@ -1,0 +1,113 @@
+\begin{tikzpicture}
+\begin{axis}
+[
+	name 	= a,
+	width	= 0.8\columnwidth,
+	height	= 0.4\columnwidth,
+	xlabel	= {$\int x dx$},
+	ylabel	= {$y$},
+	xmin					= 0,
+	xmax					= 200,
+	ymin					= -2,
+	ymax					= 2,
+	xtick					= {0, 100, 200},
+	xticklabels				= {0, 1, 2},
+	%
+	legend entries			= {$\delta = 0.1 \;\;\;$, $\delta = 1$},
+	\MyStyle,
+]
+
+	\addplot
+	[
+		smooth,
+		loosely dotted,
+		draw 	= black!30!white,
+		mark	= none,
+		line width = 1cm,
+	]
+	table
+	[
+		x	= indexes,
+		y	= sine,
+	]
+	{dataset_without_dates.txt};
+
+	
+	\foreach \i in {1,...,50}
+	{
+		\addplot
+		[
+			smooth,
+			solid,
+			draw 	= black!70!white,
+			mark	= none,
+			line width	= 0.07cm,
+		]
+		table
+		[
+			x	= indexes,
+			y	= cosine,
+		]
+		{dataset_without_dates.txt};
+	}
+	
+\end{axis}
+
+
+\begin{axis}
+[
+	name 	= b,
+	at		= (a.east),
+	anchor	= west,
+	xshift	= 1cm,
+	width	= 0.8\columnwidth,
+	height	= 0.4\columnwidth,
+	xlabel	= {$\int x dx$},
+	ylabel	= {$y$},
+	xmin					= 0,
+	xmax					= 200,
+	ymin					= -2,
+	ymax					= 2,
+	xtick					= {0, 100, 200},
+	xticklabels				= {0, 1, 2},
+	%
+	legend entries			= {$\delta = 0.1 \;\;\;$, $\delta = 1$},
+	\MyStyle,
+]
+
+	\addplot
+	[
+		smooth,
+		loosely dotted,
+		draw 	= black!30!white,
+		mark	= none,
+		line width = 1cm,
+	]
+	table
+	[
+		x	= indexes,
+		y	= sine,
+	]
+	{dataset_without_dates.txt};
+
+	
+	\addplot
+	[
+		smooth,
+		solid,
+		draw 	= black!70!white,
+		mark	= none,
+		line width	= 0.07cm,
+	]
+	table
+	[
+		x	= indexes,
+		y	= cosine,
+	]
+	{dataset_without_dates.txt};
+	
+\end{axis}
+\end{tikzpicture}
+
+
+
