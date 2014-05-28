@@ -1,0 +1,54 @@
+
+\begin{figure}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+
+% ------------------------------------------------------
+% NODES DEFINITION
+\matrix
+[
+	row sep		= 1cm,
+	column sep	= 1cm,
+]
+{
+	% ------------------------------ row 1
+	\node (nEvent) {$e_{t}$}; &
+	\node (nInput) [BlocksStyle] {I}; &
+	\node (nPlant) [BlocksStyle] {P}; &
+	\node (nOutput) {$y_{t}$}; \\
+	%
+	% ------------------------------ row 2
+	&
+	&
+	&
+	\node (nFeatures) {$f_{t}$}; \\
+};
+%
+\node (nMeasuredInput) [above = 1cm of nPlant.120] {$u_{t}$};
+\node (nDisturbance) [above = 1cm of nPlant.60] {$d_{t}$};
+
+
+% ------------------------------------------------------
+% PATHS
+\draw [LinesStyle] (nEvent) -- (nInput);
+\draw [LinesStyle] (nInput) -- (nPlant) node [midway, above] {$o_{t}$};
+\draw [LinesStyle] (nPlant) -- (nOutput);
+\draw [LinesStyle] (nInput) |- (nFeatures);
+\draw [LinesStyle] (nMeasuredInput) -- (nPlant.120);
+\draw [LinesStyle] (nDisturbance) -- (nPlant.60);
+
+
+
+\end{tikzpicture}
+%
+\caption{19.}
+\label{fig:19}
+%
+\end{center}
+\end{figure}
+
