@@ -1,0 +1,132 @@
+\begin{figure*}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+% ------------------------------------------------------
+% NODES DEFINITION
+\matrix
+(nMatrix)
+[
+	row sep		= 0.8cm,
+	column sep	= 0.6cm,
+]
+{
+	%
+	%
+	% ------------------------------ row 1 
+	\node (nM11) [] {}; &[0.5cm]
+	\node (nM12) [] {}; &
+	\node (nM13) [] {}; &
+	\node (nM14) [] {}; &[0.4cm]
+	\node (nM15) [coordinate] {}; &
+	\node (nM16) [BlocksStyle] {$z^{-1}$}; &[0.8cm]
+	\node (nM17) [BlocksStyle] {$\displaystyle \frac{1}{2} \int \boldsymbol{\omega} \otimes \boldsymbol{q} \ \text{dt}$}; &
+	\node (nM18) [] {}; & \\[-0.3cm]
+	%
+	%
+	% ------------------------------ row 2
+	\node (nM21) [] {$\boldsymbol{z}_k$}; &
+	\node (nM22) [] {\ }; &
+	\node (nM23) [] {}; &
+	\node (nM24) [BlocksStyle] {$\boldsymbol{\delta p} \rightarrow \boldsymbol{\delta q}$}; &
+	\node (nM25) [SumNodesStyle] {}; &
+	\node (nM26) [] {}; &
+	\node (nM27) [] {}; &
+	\node (nM28) [] {$\hat{\boldsymbol{q}}_{k|k}$}; & \\[-0.2cm]
+	%
+	%
+	% ------------------------------ row 3
+	\node (nM31) [] {$\boldsymbol{u}_k$}; &
+	\node (nM32) [] {}; &
+	\node (nM33) [] {}; &
+	\node (nM34) [SumNodesStyle] {}; &
+	\node (nM35) [coordinate] {}; &
+	\node (nM36) [SumNodesStyle] {}; &
+	\node (nM37) [] {}; &
+	\node (nM38) [] {$\hat{\boldsymbol{\omega}}_{k|k}$}; & \\[-0.1cm]
+	%
+	%
+	% ------------------------------ row 4
+	\node (nM41) [] {}; &
+	\node (nM42) [] {}; &
+	\node (nM43) [] {}; &
+	\node (nM44) [] {}; &
+	\node (nM45) [BlocksStyle] {$z^{-1}$}; &
+	\node (nM46) [] {$\boldsymbol{\omega}_m$}; &
+	\node (nM47) [] {}; &
+	\node (nM48) [] {}; & \\
+	%
+	%node [coordinate, midway, ] {}
+};
+
+% ------------------------------------------------------
+
+% Box spanning two rows
+\node (nSpanBox) [BlocksStyle, fit=(nM22) (nM32)] {\rotatebox[origin=rB]{90}{\textsc{SR-EKF}}};
+
+% Auxiliary nodes for lines from the row spanning box
+\node [coordinate] (nAux11N) at (nSpanBox.north) {};
+
+% Auxiliary nodes for the quaternion integral box
+\node [coordinate, xshift = -0.5cm, yshift =  0.0cm] (nAux19L) at (nM17.south) {};
+\node [coordinate, xshift =  0.5cm, yshift =  0.0cm] (nAux19R) at (nM17.south) {};
+
+% Extra lines for quaternion multiplication symbol
+\draw [shape=line,draw=black,line width=0.02cm] (nM25.north west) -- (nM25.south east);
+\draw [shape=line,draw=black,line width=0.02cm] (nM25.north east) -- (nM25.south west);
+
+% Auxiliary nodes for connecting dots
+\node [coordinate, xshift = -0.5cm, yshift =  0.0cm] (nAuxD27L) at (nM27) {};
+\node [coordinate, xshift =  0.5cm, yshift =  0.0cm] (nAuxD27R) at (nM37) {};
+
+% Draw filled circles for dots
+\fill (nAuxD27L) circle [radius=0.5mm];
+\fill (nAuxD27R) circle [radius=0.5mm];
+\fill (nM15) circle [radius=0.5mm];
+\fill (nM35) circle [radius=0.5mm];
+
+% PATHS
+%\draw [LinesStyle] (nM21) -- (nAux11);
+%\draw [LinesStyle] (nM31) -- (nAux21);
+\draw [LinesStyle] (nM21) -- ($(nSpanBox.north west)!(nM21)!(nSpanBox.south west)$);
+\draw [LinesStyle] (nM31) -- ($(nSpanBox.north west)!(nM31)!(nSpanBox.south west)$);
+\draw [LinesStyle] ($(nSpanBox.north east)!(nM24)!(nSpanBox.south east)$) -- (nM24)
+	node [at start, above] {\hspace{1.0cm}$\boldsymbol{\delta p}_{k|k}$};
+\draw [LinesStyle] ($(nSpanBox.north east)!(nM34)!(nSpanBox.south east)$) -- (nM34)
+	node [at start, above] {\hspace{1.0cm}$\boldsymbol{\delta \omega}_{k|k}$}
+	node [very near end, below] {$-$ \ \ };
+\draw [LinesStyle] (nM17) -- (nM16)
+	node [midway, above] {$\hat{\boldsymbol{q}}_{k+1|k}$};
+\draw [LinesStyle] (nM34) -- (nM36)
+	node [very near start, above] {$\hat{\boldsymbol{b}}_{k|k}$}
+	node [very near end, below] {$-$};
+\draw [LinesStyle] (nM25) -- (nM28);
+\draw [LinesStyle] (nM36) -- (nM38);
+\draw [LinesStyle] (nM46) -- (nM36)
+	node [near end, left] {$+$};
+\draw [LinesStyle] (nAuxD27L) -- (nAux19L);
+\draw [LinesStyle] (nAuxD27R) -- (nAux19R);
+\draw [LinesStyle] (nM24) -- (nM25)
+	node [midway, above] {$\boldsymbol{\delta}\hat{\boldsymbol{q}}_{k|k}$};
+\draw [LinesStyle] (nM15) -- (nM25)
+	node [at start, above] {$\hat{\boldsymbol{q}}_{k-1|k-1}$ \ \ };
+\draw [LinesStyle] (nM35) -- (nM45);
+
+\draw [LinesStyle] (nM45) -| (nM34)
+	node [near start, above] {$\hat{\boldsymbol{b}}_{k-1|k-1}$}
+	node [midway, below] {Initial value $\hat{\boldsymbol{b}}_{-1|-1}$}
+	node [very near end, left] {$+$};
+\draw [LinesStyle] (nM16) -| (nAux11N)
+	node [midway, above] {Initial value $\hat{\boldsymbol{q}}_{-1|-1}$};
+
+\end{tikzpicture}
+%
+\caption{21.}
+\label{fig:21}
+%
+\end{center}
+\end{figure*}
