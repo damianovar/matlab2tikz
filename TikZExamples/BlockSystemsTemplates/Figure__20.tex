@@ -1,0 +1,81 @@
+
+\begin{figure}[!htb]
+\begin{center}
+\begin{tikzpicture}
+[
+	xscale	= 1,	% to scale horizontally everything but the text
+	yscale	= 1,	% to scale vertically everything but the text
+]
+
+
+% ------------------------------------------------------
+% NODES DEFINITION
+\matrix
+[
+	row sep		= 1cm,
+	column sep	= 1cm,
+]
+{
+	% ------------------------------ row 1
+	\node (nM11) [] {$\alpha_{ref}$}; &
+	\node (nM12) [SumNodesStyle] {}; &
+	\node (nM13) [BlocksStyle] {P}; &
+	\node (nM14) [SumNodesStyle] {}; &
+	\node (nM15) [BlocksStyle] {PI}; &
+	\node (nM16) [BlocksStyle] {$\displaystyle \frac{\beta}{\tau s + 1}$}; &
+	\node (nM17) [BlocksStyle] {$\int$}; &
+	\node (nM18) [] {}; \\
+	% ------------------------------ row 2
+	\node (nM21) [coordinate] {}; &
+	\node (nM22) [coordinate] {}; &
+	\node (nM23) [coordinate] {}; &
+	\node (nM24) [coordinate] {}; &
+	\node (nM25) [coordinate] {}; &
+	\node (nM26) [coordinate] {}; &
+	\node (nM27) [coordinate] {}; &
+	\node (nM28) [coordinate] {}; \\
+	% ------------------------------ row 3
+	\node (nM31) [coordinate] {}; &
+	\node (nM32) [coordinate] {}; &
+	\node (nM33) [coordinate] {}; &
+	\node (nM34) [coordinate] {}; &
+	\node (nM35) [coordinate] {}; &
+	\node (nM36) [coordinate] {}; &
+	\node (nM37) [coordinate] {}; &
+	\node (nM38) [coordinate] {}; \\
+};
+
+
+
+% ------------------------------------------------------
+% PATHS
+\draw [LinesStyle] (nM11) -- (nM12)
+	node [near end, below] {$+$};
+\draw [LinesStyle] (nM12) -- (nM13)
+	node [midway, above] {$e_{att}$};
+\draw [LinesStyle] (nM13) -- (nM14)
+	node [near end, below] {$+$};
+\draw [LinesStyle] (nM14) -- (nM15)
+	node [midway, above] {$e_{rate}$};
+\draw [LinesStyle] (nM15) -- (nM16);
+\draw [LinesStyle] (nM16) -- (nM17)
+	node [midway, above] (nAux1) {$\omega$}
+	node [coordinate, midway, fill, circle, inner sep=0pt, minimum size=3pt] {};
+\draw [color=black,line width=0.02cm,solid] (nAux1) |- (nM24);
+\draw [LinesStyle] (nM24) -- (nM14)
+	node [near end, left] {$-$};
+\draw [LinesStyle] (nM17) -- (nM18)
+	node [midway, above] (nAux2) {$\alpha$}
+	node [coordinate, midway, fill, circle, inner sep=0pt, minimum size=3pt] {};
+\draw [color=black,line width=0.02cm,solid] (nAux2) |- (nM32);
+\draw [LinesStyle] (nM32) -- (nM12)
+	node [very near end, left] {$-$};
+
+
+\end{tikzpicture}
+%
+\caption{20.}
+\label{fig:20}
+%
+\end{center}
+\end{figure}
